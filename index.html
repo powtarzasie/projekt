@@ -1,218 +1,313 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mariusz Świerguła - Pomagam właścicielom firm i liderom zespołów usuwać uporczywe problemy, które hamują rozwój.">
-    <meta name="keywords" content="konsulting, troubleshooting, zarządzanie, optymalizacja procesów, Mariusz Świerguła, rozwiązywanie problemów biznesowych">
-    <meta name="author" content="Mariusz Świerguła">
-    <title>Mariusz Świerguła - Rozwiązuję Problemy, Buduję Wzrost</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-        }
-        .section-padding {
-            padding-top: 4em;
-            padding-bottom: 4em;
-        }
-        p, li {
-            line-height: 1.6em;
-            font-size: 18px;
-        }
-        h1 {
-            font-size: clamp(2.5rem, 5vw, 3.5rem); /* Responsive font size */
-            margin-bottom: 1.5em;
-        }
-        h2 {
-            font-size: clamp(2rem, 4vw, 2.5rem); /* Responsive font size */
-        }
-        .cta-button {
-            padding: 16px 32px;
-            font-weight: bold;
-            border-radius: 8px;
-            transition: all 0.3s ease-in-out;
-        }
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 0 12px rgba(255, 193, 7, 0.6);
-        }
-        /* Animacje dla efektu wejścia */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-fadeInUp {
-            animation: fadeInUp 0.8s ease-out forwards;
-        }
-    </style>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="description" content="Mariusz Świerguła - Ekspert w konsultingu i troubleshootingu. Rozwiązuję problemy biznesowe z precyzją i skutecznością.">
+   <meta name="keywords" content="konsulting, troubleshooting, zarządzanie, optymalizacja procesów, Mariusz Świerguła">
+   <meta name="author" content="Mariusz Świerguła">
+   <title>Mariusz Świerguła - Ekspert w Konsultingu i Troubleshootingu</title>
+   <!-- Tailwind CSS CDN -->
+   <script src="https://cdn.tailwindcss.com"></script>
+   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+   <style>
+       body {
+           font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+       }
+       /* Animacje dla efektu wejścia */
+       @keyframes fadeInUp {
+           from { opacity: 0; transform: translateY(20px); }
+           to { opacity: 1; transform: translateY(0); }
+       }
+       .animate-fadeInUp {
+           animation: fadeInUp 0.6s ease-out forwards;
+       }
+       /* Styl dla wizytówki */
+       .contact-card-container {
+           perspective: 1000px;
+           width: 100%;
+           max-width: 400px;
+           height: 220px;
+           margin: auto;
+       }
+       .contact-card {
+           width: 100%;
+           height: 100%;
+           position: relative;
+           transform-style: preserve-3d;
+           transition: transform 0.6s ease-in-out;
+           cursor: pointer;
+       }
+       .contact-card.flipped {
+           transform: rotateY(180deg);
+       }
+       .contact-card-front, .contact-card-back {
+           position: absolute;
+           width: 100%;
+           height: 100%;
+           backface-visibility: hidden;
+           border-radius: 1rem;
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+           align-items: center;
+           padding: 1.5rem;
+           box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+       }
+       .contact-card-front {
+           background: linear-gradient(135deg, #020617, #0f172a); /* Bardzo ciemny granat, prawie czarny */
+           color: #ffffff;
+           font-weight: 600;
+       }
+       .contact-card-back {
+           background: linear-gradient(135deg, #facc15, #f59e0b);
+           color: #1e1b4b;
+           transform: rotateY(180deg);
+           gap: 0.5rem;
+       }
+       .contact-card-back a {
+           color: #1e1b4b;
+           font-weight: 600;
+           transition: color 0.3s;
+       }
+       .contact-card-back a:hover {
+           color: #2563eb;
+       }
+   </style>
 </head>
-<body class="bg-slate-900 text-gray-100">
+<body class="bg-slate-950 text-gray-100 min-h-screen">
 
-    <!-- 1. HERO Section -->
-    <header class="relative text-center section-padding bg-[#101a2d]">
-        <div class="container mx-auto px-4 animate-fadeInUp">
-            <h1 class="font-extrabold text-white flex items-center justify-center gap-4">
-                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-yellow-400">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                    <path d="m9 12 2 2 4-4"></path>
-                </svg>
-                Mariusz Świerguła
-            </h1>
-            <p class="text-xl md:text-2xl text-blue-200 max-w-2xl mx-auto">
-                <b>Pomagam właścicielom firm i liderom zespołów usuwać uporczywe problemy, które hamują rozwój.</b>
-                <br>Działam szybko i skutecznie – od analizy do wdrożenia.
-            </p>
-            <a href="#kontakt" id="headerContactButton" class="mt-8 inline-block bg-yellow-500 text-gray-900 cta-button">
-                Umów Bezpłatną Konsultację
-            </a>
-        </div>
-    </header>
-    
-    <!-- 2. "Kim Jestem?" Section -->
-    <section id="o-mnie" class="section-padding bg-[#f8f9fa]">
-        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-center gap-12 animate-fadeInUp">
-            <div class="w-full md:w-1/3 flex-shrink-0">
-                <img src="https://res.cloudinary.com/ds0fsomtx/image/upload/v1754480258/Mariusz%C5%9Awiergu%C5%82a_vt6lym.jpg" alt="Zdjęcie Mariusza Świerguły" class="rounded-xl shadow-2xl w-full h-auto object-cover border-4 border-yellow-500">
-            </div>
-            <div class="w-full md:w-2/3 text-center md:text-left text-gray-800">
-                <h2 class="font-bold text-blue-900 mb-6">Kim Jestem?</h2>
-                <div class="space-y-4 max-w-xl mx-auto md:mx-0">
-                    <p>Mam ponad 20 lat doświadczenia w zarządzaniu zespołami, projektami i procesami.</p>
-                    <p>Specjalizuję się w <b>usuwaniu chaosu operacyjnego</b> i budowaniu trwałego wzrostu. Łączę analityczne podejście z konkretnym działaniem. Nie komplikuję – rozwiązuję.</p>
-                    <p class="font-bold">Mój styl? Słucham. Działam. Dowożę.</p>
-                    <p class="italic text-gray-600 mt-4">"Jeśli coś nie działa, to nie problem – to systemowy sygnał, który można naprawić."</p>
-                </div>
-            </div>
-        </div>
-    </section>
+   <!-- Header Section -->
+   <header class="relative text-center py-16 md:py-24 bg-slate-950">
+       <div class="container mx-auto px-4 animate-fadeInUp">
+           <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-4 flex items-center justify-center gap-4">
+               <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-yellow-400">
+                   <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                   <path d="m9 12 2 2 4-4"></path>
+               </svg>
+               Mariusz Świerguła
+           </h1>
+           <p class="text-xl md:text-2xl text-blue-200 max-w-2xl mx-auto">
+               <b>Eliminuję problemy, generuję dwucyfrowe wzrosty.</b>
+               <br>Twoje problemy to moje wyzwania. Przerzuć je na mnie – zajmę się nimi od A do Z.
+           </p>
+           <button id="headerContactButton" class="mt-6 inline-block bg-yellow-500 text-gray-900 font-semibold py-3 px-6 rounded-lg hover:bg-yellow-400 transition duration-300">
+               Zacznijmy Rozwiązywać Problemy
+           </button>
+       </div>
+   </header>
+   
+   <!-- About Section with Image -->
+   <section id="o-mnie" class="py-16 md:py-24 bg-slate-800">
+       <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-center gap-12 animate-fadeInUp">
+           <div class="w-full md:w-1/3 flex-shrink-0">
+               <!-- Zaktualizowany URL obrazka na Twój link z Cloudinary -->
+               <img src="https://res.cloudinary.com/ds0fsomtx/image/upload/v1754480258/MariuszŚwierguła_vt6lym.jpg" alt="Zdjęcie Mariusza Świerguły" class="rounded-xl shadow-2xl w-full h-auto object-cover border-4 border-yellow-500 transform hover:scale-105 transition-transform duration-300">
+           </div>
+           <div class="w-full md:w-2/3 text-center md:text-left">
+               <h2 class="text-3xl md:text-4xl font-bold text-yellow-400 mb-6">Kim Jestem?</h2>
+               <p class="text-lg md:text-xl text-gray-300 leading-relaxed max-w-xl mx-auto md:mx-0">
+                   Z ponad 20-letnim doświadczeniem w zarządzaniu, specjalizuję się w <b>eliminowaniu chaosu i napędzaniu wzrostu.</b> Moje podejście to połączenie analitycznego umysłu z dynamicznym działaniem. Wierzę, że każdy problem to ukryta szansa na rozwój, a moim celem jest, abyś Ty i Twoja firma z tej szansy skorzystali.
+               </p>
+               <p class="text-lg md:text-xl text-gray-300 mt-4 leading-relaxed max-w-xl mx-auto md:mx-0">
+                   Moje motto? "Jeśli problem się pojawił, to znaczy, że można go rozwiązać."
+               </p>
+           </div>
+       </div>
+   </section>
 
-    <!-- 3. "To nie incydent. To system." Section -->
-    <section class="section-padding bg-[#101a2d]">
-        <div class="container mx-auto px-4 text-center animate-fadeInUp">
-            <h2 class="font-bold text-yellow-400 mb-8 flex items-center justify-center gap-4">
-                ⚠️ To Nie Incydent. To System.
-            </h2>
-            <div class="max-w-[640px] mx-auto space-y-6 text-gray-300">
-                <p>Gdy problem pojawia się raz – to przypadek.</p>
-                <p>Drugi raz – to ostrzeżenie.</p>
-                <p class="font-bold text-white">Trzeci raz – to system, który działa… tylko nie tak, jak trzeba.</p>
-                <p>Pomagam firmom zidentyfikować ukryte wzorce i punkty zapalne, zanim urosną do poziomu kryzysu.</p>
-                <p class="italic text-yellow-300">Jeśli coś wraca jak bumerang – to sygnał, że trzeba działać inaczej.</p>
-            </div>
-        </div>
-    </section>
+   <!-- Mission Section -->
+   <section class="py-16 md:py-24 bg-white">
+       <div class="container mx-auto px-4 animate-fadeInUp">
+           <h2 class="text-3xl md:text-4xl font-bold text-yellow-700 text-center mb-8 flex items-center justify-center gap-4">
+               <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-700">
+                   <circle cx="12" cy="12" r="10"></circle>
+                   <path d="M8 12h8"></path>
+                   <path d="M12 8v8"></path>
+               </svg>
+               Moja Misja: Konkretne Wyniki, Twój Spokój
+           </h2>
+           <p class="text-lg md:text-xl text-gray-800 max-w-3xl mx-auto text-justify leading-relaxed">
+               Nie tylko identyfikuję i rozwiązuję nawet najbardziej złożone problemy biznesowe – ja je <b>eliminuję</b>, dostarczając precyzyjne, skuteczne i trwałe rozwiązania. Moim celem jest uwolnienie Twojego potencjału i <b>napędzanie realnego, mierzalnego sukcesu Twojej firmy.</b>
+           </p>
+           <!-- Dodany cytat -->
+           <blockquote class="text-lg md:text-xl text-gray-600 italic border-l-4 border-yellow-500 pl-4 mt-8 max-w-3xl mx-auto">
+               <p>„Jeśli problem pojawił się raz – to incydent. Jeśli zdarzy się drugi raz – to sygnał. Ale jeśli wydarzył się po raz trzeci – to już system. A każdy system działa – nawet jeśli prowadzi do katastrofy.”</p>
+               <p class="mt-2">Pomagam firmom zidentyfikować ukryte wzorce, zanim one zdefiniują ich przyszłość.</p>
+           </blockquote>
+       </div>
+   </section>
 
-    <!-- 4. "Usługi" Section -->
-    <section class="section-padding bg-[#f8f9fa]">
-        <div class="container mx-auto px-4">
-            <h2 class="font-bold text-blue-900 text-center mb-12">Jak Mogę Pomóc?</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-gray-800">
-                <!-- Szybka Diagnostyka i Akcja Naprawcza -->
-                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200 animate-fadeInUp">
-                    <h3 class="text-xl font-bold text-blue-800 mb-4">Szybka Diagnostyka i Akcja Naprawcza</h3>
-                    <p class="mb-4">Wchodzę w środek problemu i usuwam go u źródła. Dla firm, które zmagają się z nagłymi spadkami efektywności, chaosem operacyjnym lub niewidocznymi punktami zapalnymi.</p>
-                    <p class="font-bold text-sm text-yellow-700">📌 Forma: 2 spotkania online + raport + plan działań.</p>
-                </div>
-                <!-- Optymalizacja i Wzrost -->
-                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200 animate-fadeInUp" style="animation-delay: 0.2s;">
-                    <h3 class="text-xl font-bold text-blue-800 mb-4">Optymalizacja i Wzrost</h3>
-                    <p class="mb-4">Redukuję koszty, zwiększam efektywność, przywracam płynność procesów. Dla zespołów, które chcą działać lepiej, szybciej i bez strat.</p>
-                    <p class="font-bold text-sm text-yellow-700">📌 Forma: audyt + warsztat + plan zmian + 1 miesiąc wsparcia.</p>
-                </div>
-                <!-- Doradztwo Strategiczne z Egzekucją -->
-                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200 animate-fadeInUp" style="animation-delay: 0.4s;">
-                    <h3 class="text-xl font-bold text-blue-800 mb-4">Doradztwo Strategiczne z Egzekucją</h3>
-                    <p class="mb-4">Tworzymy strategię dopasowaną do realiów Twojej firmy. Bez gadania. Z wdrożeniem.</p>
-                    <p class="font-bold text-sm text-yellow-700">📌 Forma: seria 3 warsztatów + strategiczna mapa działań.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+   <!-- New Section: To Nie Incydent. To System. -->
+   <section class="py-16 md:py-24 bg-slate-900">
+       <div class="container mx-auto px-4 animate-fadeInUp">
+           <h2 class="text-3xl md:text-4xl font-bold text-yellow-400 text-center mb-8 flex items-center justify-center gap-4">
+               <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-400">
+                   <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                   <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+               </svg>
+               To Nie Incydent. To System.
+           </h2>
+           <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto text-justify leading-relaxed">
+               Często słyszę: „To tylko jednorazowy problem.” Potem zdarza się drugi raz – już trudniej go zignorować. Ale trzeci raz? To już nie przypadek. To wzorzec. A wzorzec to system – taki, który działa w tle, nawet jeśli niszczy firmę od środka.
+           </p>
+           <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto text-justify leading-relaxed mt-4">
+               Pracuję z przedsiębiorcami, którzy czują, że coś w ich organizacji ciągle nie działa tak, jak powinno – mimo pozornie dobrego zespołu i procesów. Pomagam im zidentyfikować niewidzialne punkty zapalne, zanim te urosną w strukturalny chaos.
+           </p>
+           <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto text-justify leading-relaxed mt-4">
+               Jeśli w Twojej firmie coś <b>wraca jak bumerang</b>, to nie jest błąd. To informacja. I mogę pomóc Ci ją właściwie odczytać.
+           </p>
+           <div class="text-center mt-8">
+               <button id="systemSectionContactButton" class="inline-block bg-yellow-500 text-gray-900 font-semibold py-3 px-6 rounded-lg hover:bg-yellow-400 transition duration-300">
+                   Umów się na bezpłatną diagnozę
+               </button>
+               <p class="text-md text-gray-400 mt-4">
+                   Trzeci raz to już system. A system działa – czy tego chcesz, czy nie.
+               </p>
+           </div>
+       </div>
+   </section>
 
-    <!-- 5. "Doświadczenie + Współpraca" Section -->
-    <section class="section-padding bg-[#101a2d]">
-        <div class="container mx-auto px-4 text-center animate-fadeInUp">
-            <h2 class="font-bold text-yellow-400 mb-8">Doświadczenie, które przynosi efekty</h2>
-            <div class="max-w-3xl mx-auto text-gray-300 space-y-4 mb-10">
-                <p>Zrealizowałem projekty o wartości ponad 10 mln zł. Współpracowałem z największymi instytucjami finansowymi w Polsce.</p>
-                <p class="font-bold text-white">Dziś pomagam właścicielom firm i menedżerom osiągać konkretne wyniki w krótszym czasie.</p>
-            </div>
-            <ul class="space-y-4 max-w-md mx-auto text-left">
-                <li class="flex items-start gap-3">
-                    <span class="text-2xl">💰</span>
-                    <div><b>Zyski mierzalne w liczbach</b> – każde wdrożenie to realny wynik, nie "fajny pomysł".</div>
-                </li>
-                <li class="flex items-start gap-3">
-                    <span class="text-2xl">⚙️</span>
-                    <div><b>Eliminacja chaosu</b> – wyłapuję to, czego inni nie widzą.</div>
-                </li>
-                <li class="flex items-start gap-3">
-                    <span class="text-2xl">🤝</span>
-                    <div><b>Lepiej działające zespoły</b> – mniej zgrzytów, więcej współpracy.</div>
-                </li>
-                <li class="flex items-start gap-3">
-                    <span class="text-2xl">📈</span>
-                    <div><b>Wzrost przewidywalności i zysków</b> – dzięki systemowi, nie przypadkowi.</div>
-                </li>
-                <li class="flex items-start gap-3">
-                    <span class="text-2xl">🎯</span>
-                    <div><b>Motywacja i egzekucja</b> – zaangażowany zespół, który robi różnicę.</div>
-                </li>
-            </ul>
-        </div>
-    </section>
+   <!-- Services Section -->
+   <section class="py-16 md:py-24 bg-slate-950">
+       <div class="container mx-auto px-4">
+           <h2 class="text-3xl md:text-4xl font-bold text-yellow-400 text-center mb-12">Moje Usługi: Konkretne Działanie, Mierzalne Korzyści</h2>
+           <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+               <!-- Troubleshooting & Naprawianie (now 1st) -->
+               <div class="bg-slate-900 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 animate-fadeInUp">
+                   <h3 class="text-xl font-semibold text-blue-400 mb-4 flex items-center gap-2">
+                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                           <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.77 3.77Z"></path>
+                       </svg>
+                       Troubleshooting & Naprawianie
+                   </h3>
+                   <p class="text-gray-300 text-justify">Diagnozuję i eliminuję problemy operacyjne z precyzją chirurga. Niezależnie od tego, czy to chaos procesowy, czy spadające wskaźniki – <b>przywracam płynność i efektywność, co przekłada się na wzrosty.</b> Moja specjalność to przywracanie porządku tam, gdzie ininni widzą tylko bałagan.</p>
+               </div>
+               <!-- Optymalizacja Procesów & Innowacje (now 2nd) -->
+               <div class="bg-slate-900 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 animate-fadeInUp" style="animation-delay: 0.2s;">
+                   <h3 class="text-xl font-semibold text-blue-400 mb-4 flex items-center gap-2">
+                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                           <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+                           <circle cx="12" cy="12" r="3"></circle>
+                       </svg>
+                       Optymalizacja Procesów & Innowacje
+                   </h3>
+                   <p class="text-gray-300 text-justify">Wdrażam rozwiązania, które nie tylko zwiększają wydajność, ale też realnie redukują koszty operacyjne. Specjalizuję się w transformacji i innowacjach, <b>generując dwucyfrowe wzrosty sprzedaży i wzrosty efektywności przy ponad 20% oszczędnościach kosztów, cyfryzując procesy sprzedażowe oraz serwisowe.</b></p>
+               </div>
+               <!-- Konsulting Strategiczny (now 3rd) -->
+               <div class="bg-slate-900 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 animate-fadeInUp" style="animation-delay: 0.4s;">
+                   <h3 class="text-xl font-semibold text-blue-400 mb-4 flex items-center gap-2">
+                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                           <path d="M15.5 14.5c2.2-2.2 2.9-4.4 2.4-7.1-1.4-1.5-2.8-3-4.9-3.4-1.9-.4-3.5-.1-4.9.9-1.4 1-2.6 2.8-3.5 4.9-1 2.2-.8 4.6.6 7.1.3.5.6 1 1 1.5l2 2c.8.8 2.2 1.2 3.2 1.2s2.4-.4 3.2-1.2l2-2c.4-.5.7-1 1-1.5.8-1.5 1.2-3.2 1.2-5.5z"></path>
+                           <path d="M12 18v-6"></path>
+                           <path d="M12 12l-4-4"></path>
+                           <path d="M12 12l4-4"></path>
+                       </svg>
+                       Konsulting Strategiczny
+                   </h3>
+                   <p class="text-gray-300 text-justify">Tworzę strategie, które nie tylko wyglądają dobrze na papierze. Przekształcam wizje w konkretne, mierzalne wyniki, dopasowane do unikalnych potrzeb Twojej firmy i rynkowych realiów. <b>Doświadczenie w fuzjach banków i contact center pozwala mi widzieć szerszy obraz i unikać pułapek.</b></p>
+               </div>
+           </div>
+       </div>
+   </section>
 
-    <!-- 6. Contact Section -->
-    <section id="kontakt" class="section-padding bg-[#f8f9fa]">
-        <div class="container mx-auto px-4 animate-fadeInUp">
-            <h2 class="font-bold text-blue-900 text-center mb-8">Zrób Pierwszy Krok – Zarezerwuj Rozmowę</h2>
-            <div class="max-w-xl mx-auto bg-white p-8 rounded-lg shadow-md">
-                <form action="#" method="POST" class="space-y-6 text-gray-800">
-                    <div>
-                        <label for="name" class="block text-sm font-medium text-gray-700">Imię</label>
-                        <input type="text" name="name" id="name" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500">
-                    </div>
-                    <div>
-                        <label for="email" class="block text-sm font-medium text-gray-700">E-mail</label>
-                        <input type="email" name="email" id="email" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500">
-                    </div>
-                    <div>
-                        <label for="problem" class="block text-sm font-medium text-gray-700">Opisz krótko swój problem</label>
-                        <textarea id="problem" name="problem" rows="4" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500"></textarea>
-                    </div>
-                    <div>
-                        <button type="submit" class="w-full flex justify-center bg-yellow-500 text-gray-900 cta-button">
-                            Umów Bezpłatną Konsultację
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </section>
+   <!-- About Section -->
+   <section class="py-16 md:py-24 bg-white">
+       <div class="container mx-auto px-4 animate-fadeInUp">
+           <h2 class="text-3xl md:text-4xl font-bold text-yellow-700 text-center mb-8 flex items-center justify-center gap-4">
+               <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-700">
+                   <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                   <circle cx="9" cy="7" r="4"></circle>
+                   <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                   <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+               </svg>
+               Moje doświadczenie, Twoje zyski
+           </h2>
+           <p class="text-lg md:text-xl text-gray-800 max-w-3xl mx-auto text-justify leading-relaxed">
+               Z ponad 20-letnim doświadczeniem na stanowiskach menadżerskich i eksperckich, <b>w tym w zarządzaniu projektami z budżetami przekraczającymi 10 milionów złotych</b>, jestem Twoim partnerem w rozwiązywaniu najtrudniejszych wyzwań. Moje podejście to miks analitycznego intelektu, aktywnego działania i nieustannego dążenia do osiągania celów.
+               <br><br>
+               Pracowałem dla jednej z <b>największych instytucji finansowych w Polsce</b>, gdzie zdobyłem unikalne doświadczenie w transformacji i optymalizacji na dużą skalę.
+               <br><br>
+               <b>Co zyskujesz, współpracując ze mną:</b>
+               <ul class="list-disc list-inside text-left mx-auto max-w-xl mt-4 text-gray-800">
+                   <li><b>Mierzalne zyski finansowe:</b> Każde wyzwanie zamieniam w zwycięstwo, które realnie zwiększa Twoje przychody.</li>
+                   <li><b>Szybkie i zyskowne działanie:</b> Nie tracę czasu na puste analizy. Dynamicznie adaptuję strategie, przekuwając pomysły w konkretne, dochodowe kroki.</li>
+                   <li><b>Eliminacja chaosu i strat:</b> Przywracam porządek i efektywność, minimalizując straty i maksymalizując wydajność Twoich procesów.</li>
+                   <li><b>Skuteczna współpraca zespołowa:</b> Rozumiem Twoje wyzwania i potrafię zaangażować ludzi, budując pozytywną atmosferę i efektywną realizację celów.</li>
+                   <li><b>Przewaga konkurencyjna:</b> Dzięki głębokiej analizie i innowacyjnym rozwiązaniom, Twoja firma zyskuje unikalną pozycję na rynku.</li>
+                   <li><b>Motywacja i pozytywne wyniki:</b> Nawet w najtrudniejszych chwilach inspiruję do działania, co przekłada się na zaangażowanie zespołu i osiąganie ponadprzeciętnych rezultatów.</li>
+               </ul>
+               Moim celem jest Twój sukces, a moją pasją – rozwiązywanie problemów.
+           </p>
+       </div>
+   </section>
 
-    <!-- Footer -->
-    <footer class="bg-[#101a2d] py-6 text-center text-gray-400">
-        <p>© 2025 Mariusz Świerguła. Wszelkie prawa zastrzeżone.</p>
-    </footer>
+   <!-- Contact Section -->
+   <section id="kontakt" class="py-16 md:py-24 bg-slate-950">
+       <div class="container mx-auto px-4 animate-fadeInUp">
+           <h2 class="text-3xl md:text-4xl font-bold text-yellow-400 text-center mb-12">Skontaktuj się: Przerzuć na Mnie Swój Problem</h2>
+           <div class="contact-card-container">
+               <div id="contactCard" class="contact-card">
+                   <div class="contact-card-front">
+                       <p class="text-xl md:text-2xl font-semibold">Gotowy na rozwiązanie problemu? Kliknij!</p>
+                   </div>
+                   <div class="contact-card-back">
+                       <p class="text-xl font-bold">Mariusz Świerguła</p>
+                       <p><a href="mailto:Mariusz.swiergula@gmail.com" aria-label="Wyślij e-mail do Mariusza Świerguły">Mariusz.swiergula@gmail.com</a></p>
+                       <p><a href="tel:+48600353150" aria-label="Zadzwoń do Mariusza Świerguły">+48 600 353 150</a></p>
+                       <p class="text-sm">Trouble Shooting Manager</p>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </section>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const headerContactButton = document.getElementById('headerContactButton');
+   <!-- Footer -->
+   <footer class="bg-slate-950 py-6 text-center text-gray-400">
+       <p>© 2025 Mariusz Świerguła. Wszelkie prawa zastrzeżone.</p>
+   </footer>
 
-            // Płynne przewijanie do formularza kontaktowego
-            if (headerContactButton) {
-                headerContactButton.addEventListener('click', (event) => {
-                    event.preventDefault();
-                    document.getElementById('kontakt').scrollIntoView({ behavior: 'smooth' });
-                });
-            }
-        });
-    </script>
+   <script>
+       document.addEventListener('DOMContentLoaded', () => {
+           const contactCard = document.getElementById('contactCard');
+           const headerContactButton = document.getElementById('headerContactButton');
+           const systemSectionContactButton = document.getElementById('systemSectionContactButton'); // Nowy przycisk
+
+           // Listener dla wizytówki (kliknięcie odwraca ją)
+           if (contactCard) {
+               contactCard.addEventListener('click', () => {
+                   contactCard.classList.toggle('flipped');
+               });
+           }
+
+           // Funkcja do przewijania i odwracania wizytówki
+           const scrollToContactAndFlip = () => {
+               if (contactCard) {
+                   // Upewnij się, że wizytówka jest odwrócona
+                   if (!contactCard.classList.contains('flipped')) {
+                       contactCard.classList.add('flipped');
+                   }
+                   // Przewiń do sekcji kontakt
+                   document.getElementById('kontakt').scrollIntoView({ behavior: 'smooth' });
+               }
+           };
+
+           // Listener dla przycisku w nagłówku
+           if (headerContactButton) {
+               headerContactButton.addEventListener('click', (event) => {
+                   event.preventDefault();
+                   scrollToContactAndFlip();
+               });
+           }
+
+           // Listener dla nowego przycisku w sekcji "To Nie Incydent. To System."
+           if (systemSectionContactButton) {
+               systemSectionContactButton.addEventListener('click', (event) => {
+                   event.preventDefault();
+                   scrollToContactAndFlip();
+               });
+           }
+       });
+   </script>
 </body>
 </html>
